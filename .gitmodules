@@ -1,0 +1,3 @@
+[submodule "CodeSupportingFunctions"]
+	path = Code/SupportingFunctions
+	url = https://github.com/CowenLab/CowenLib.git
