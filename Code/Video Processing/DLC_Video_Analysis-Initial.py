@@ -20,7 +20,7 @@ cwd=os.getcwd()
 [parent,rat]=os.path.split(parent)
 
 #Update Config variable to path of DLC config file
-config=r'G:\String Pulling Analysis\Paw Tracking-Gianna-2020-10-14\config.yaml'#this shouldn't change unless you make a new network
+config=r'G:\GitHub\Behavior_Quantification\Code\Video Processing\DeepLabCut\config.yaml'#this shouldn't change unless you make a new network or move this one
 os.rename(session+'.mp4',session+'_org.mp4')
 INvideo=session+'_org.mp4'
 Label_video=False
