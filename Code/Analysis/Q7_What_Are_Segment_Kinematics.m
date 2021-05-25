@@ -27,10 +27,10 @@ measurements= {'peakSpeed' 'eucleadianDistance' 'totalDistance' 'movementTime' '
 
 load('EVT.mat')
 if ~isempty(EVT.front_camera_frame_ID) && ~isempty(EVT.rotary_encoder_ID)
-    fprintf("Detected Neural Recording Session")
+    fprintf("Detected Neural Recording Session\n")
     ePhys=1;
 else
-    fprintf("Detected Behavior Session")
+    fprintf("Detected Behavior Session\n")
     ePhys=0;
 end
 clear EVT
