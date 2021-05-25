@@ -4,7 +4,7 @@ Gia Jordan 2020
 
 Run in Anaconda GPU Environment
 C:\Program Files\DeepLabCut-master\conda-environments
-
+Also Run in directory where video is located
 
 """
 #activate dlc-windowsGPU
@@ -19,7 +19,7 @@ cwd=os.getcwd()
 [parent,session]=os.path.split(cwd)
 [parent,rat]=os.path.split(parent)
 
-
+#Update Config variable to path of DLC config file
 config=r'G:\String Pulling Analysis\Paw Tracking-Gianna-2020-10-14\config.yaml'#this shouldn't change unless you make a new network
 os.rename(session+'.mp4',session+'_org.mp4')
 INvideo=session+'_org.mp4'
