@@ -17,9 +17,11 @@ Collection
 Video Processing
 	Functions related to the inital processing of the behavior videos are in this directory. The 'Functions' directory in this directory should be added to your Matlab Path before softwarew use. For ease of file transfer, videos can be converted beforehad from .AVIs to .MP4s. To begin, 'DLC_Vido_Analysis-Initial' should be ran in the directory of the video to rotate the video to the correct orientation. Next, 'INTAN_Sync_Paws_DeepLabCut_To_Intan' should be ran in the session directory of interest to sync the video time stamps to the cordinates and to filter the position data. Afterward 'DLC_Create_Labled_Video' or 'DLC_Create_Segments_Videos' can be used to visualized the filtered position data on top of the recorded video.
 
-	Deeplabcut models in 
+Deeplabcut models in 
 'G:\GitHub\Behavior_Quantification\Code\Video Processing\DeepLabCut\dlc-models\iteration-0\Paw TrackingOct14-trainset85shuffle1\train'
-	and
+
+and
+
 'G:\GitHub\Behavior_Quantification\Code\Video Processing\DeepLabCut\dlc-models\iteration-1\Paw TrackingOct14-trainset85shuffle1\train' 
 must be unzipped (7Zip can be used for these) before use due to GitHub size limits.
 	
