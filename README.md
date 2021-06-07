@@ -25,11 +25,11 @@ to download the submodules necessary.
 
 Deeplabcut models in 
 
-	'G:\GitHub\Behavior_Quantification\Code\Video Processing\DeepLabCut\dlc-models\iteration-0\Paw TrackingOct14-trainset85shuffle1\train'
+	'Code\Video Processing\DeepLabCut\dlc-models\iteration-0\Paw TrackingOct14-trainset85shuffle1\train'
 
 and
 
-	'G:\GitHub\Behavior_Quantification\Code\Video Processing\DeepLabCut\dlc-models\iteration-1\Paw TrackingOct14-trainset85shuffle1\train' 
+	'Code\Video Processing\DeepLabCut\dlc-models\iteration-1\Paw TrackingOct14-trainset85shuffle1\train' 
 	
 must be unzipped (7Zip can be used for these) before use due to GitHub size limits. The DeepLabCut <code>config.yaml</code> should also be updated for each user to include the appropriate paths of where the directory is located.
 	
