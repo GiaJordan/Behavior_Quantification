@@ -1,23 +1,15 @@
 function INTAN_Sync_DeepLabCut_To_Intan %(runAll)
-% function to sync DLC coordinates to timestamps from camera gathered by
-% neural recording system. Filters and interpolates coordinates after
-% synchronization. To be ran in directory of the session to analyze
-% Outputs:  Unfiltered Time Stamped Coordinates
-%           Filtered Time Stamped Coordinates
-%           Filtered Time Stamped Coordinates with orientation corrected (positive y is up physically)
-%
-%           Innputs listed below
+% function INTAN_Sync_DeepLabCut_To_Intan(deeplab_file, frame_times_uS, outfile, sFreq)
 %
 % Cowen 2020
 % Jordan 2021
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Inputs
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 BoxPath = 'C:\Users\Sam.Jordan\Box\'; % Path to overall neural data directory. include last '\'
 InsideBox = 'Cowen Laboratory\Data\LID_Ketamine_Single_Unit_R56'; %String pulling study directories of interest inside main data directory
 master_path = 'G:\DATA\LID_Ketamine_SingleUnit_R56'; %Path to where all behavior videos are stored
-networkIt=1; %DeepLabCut network iteration to use for analysis
-Filt = 1; %Bool, use ARIMA filtered coordinates
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 folders = split(pwd,'\');
@@ -27,11 +19,11 @@ rat=folders{end-1};
 
 runAll = 0;
 
-%Measures of 10cm in pixels from video frame
+
 PXmap   =  [386,386,387];
 
-
-
+networkIt=1;
+Filt = 1;
 
 fprintf("Using network iteration %d\n",networkIt)
 pause(3)
