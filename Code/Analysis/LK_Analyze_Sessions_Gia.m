@@ -27,8 +27,6 @@ ALLSES = LK_Load_SessionList_File(DIRS.SessionList_File);
 % Enter the analysis code from the Questions folder.
 % AND select the appropriate sessions to analyze.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%ana_function = @Q0_Can_It_Iterate;
-%ana_function = @Q1_Does_IMU_Correlate_With_DLC;
 %ana_function=@Q5_Where_Do_Neurons_Fire;
 %ana_function=@Q6_When_Do_Neurons_Fire_After_Events;
 %ana_function=@Q7_What_Are_Segment_Kinematics;
