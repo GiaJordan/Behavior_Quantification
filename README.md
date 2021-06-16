@@ -21,7 +21,7 @@ to download the submodules necessary.
 
 
 <h3>Video Processing</h3>
-	<p>Functions related to the inital processing of the behavior videos are in this directory. The 'Functions' directory in this directory should be added to your Matlab Path before softwarew use. For ease of file transfer, videos can be converted beforehand from .AVIs to .MP4s. To begin, <code>DLC_Vido_Analysis-Initial</code> should be ran in the directory of the video to rotate the video to the correct orientation. Next, <code>INTAN_Sync_Paws_DeepLabCut_To_Intan</code> should be ran in the session directory of interest to sync the video time stamps to the cordinates and to filter the position data. Afterward <code>DLC_Create_Labled_Video</code> or <code>DLC_Create_Segments_Videos</code> can be used to visualized the filtered position data on top of the recorded video.</p>
+	<p>Functions related to the inital processing of the behavior videos are in this directory. The 'Functions' directory in this directory should be added to your Matlab Path before software use. For ease of file transfer, videos can be converted beforehand from .AVIs to .MP4s. To begin, <code>DLC_Vido_Analysis-Initial</code> should be ran in the directory of the video to rotate the video to the correct orientation. Next, <code>INTAN_Sync_Paws_DeepLabCut_To_Intan</code> should be ran in the session directory of interest to sync the video time stamps to the cordinates and to filter the position data. Afterward <code>DLC_Create_Labled_Video</code> or <code>DLC_Create_Segments_Videos</code> can be used to visualized the filtered position data on top of the recorded video.</p>
 
 Deeplabcut models in 
 
@@ -31,7 +31,9 @@ and
 
 	'Code\Video Processing\DeepLabCut\dlc-models\iteration-1\Paw TrackingOct14-trainset85shuffle1\train' 
 	
-must be unzipped (7Zip can be used for these) before use due to GitHub size limits. The DeepLabCut <code>config.yaml</code> should also be updated for each user to include the appropriate paths of where the directory is located.
+must be unzipped (7Zip should be used for these) before use due to GitHub size limits. The <code>project_path</code> in DeepLabCut's <code>config.yaml</code> file should also be updated for each user to include the appropriate paths of where the project directory is located.
+
+<p>A python environment for use with Anaconda: <code>environment.yml</code> is included with the repository. The environment includes the version of python used in development and the necessary packages for video processing and analysis with DeepLabCut. The video processing environment can be created through the Anaconda command line by changing to the 'Code\Video Processing\Anaconda Environment' directory and executing <code>conda env create -f environment.yml</code>. Afterwards, cuDNN 7.4.1 should be downloaded from <a href="https://developer.nvidia.com/rdp/cudnn-archive">Nvidia</a> and each file should be copied to its corresponding folder in the Anaconda environment directory. A guide exists on <a href="https://stackoverflow.com/a/65646944">StackOverflow</a> for placing the cuDNN files.</p>
 	
 
 <h3>Analysis</h3>
