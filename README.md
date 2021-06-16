@@ -31,7 +31,7 @@ and
 
 	'Code\Video Processing\DeepLabCut\dlc-models\iteration-1\Paw TrackingOct14-trainset85shuffle1\train' 
 	
-must be unzipped (7Zip should be used for these) before use due to GitHub size limits. The <code>project_path</code> inDeepLabCut's <code>config.yaml</code> file should also be updated for each user to include the appropriate paths of where the project directory is located.
+must be unzipped (7Zip should be used for these) before use due to GitHub size limits. The <code>project_path</code> in DeepLabCut's <code>config.yaml</code> file should also be updated for each user to include the appropriate paths of where the project directory is located.
 
 <p>A python environment for use with Anaconda: <code>environment.yml</code> is included with the repository. The environment includes the version of python used in development and the necessary packages for video processing and analysis with DeepLabCut. The video processing environment can be created through the Anaconda command line by changing to the 'Code\Video Processing\Anaconda Environment' directory and executing <code>conda env create -f environment.yml</code>. Afterwards, cuDNN 7.4.1 should be downloaded from <a href="https://developer.nvidia.com/rdp/cudnn-archive">Nvidia</a> and each file should be copied to its corresponding folder in the Anaconda environment directory. A guide exists on <a href="https://stackoverflow.com/a/65646944">StackOverflow</a> for placing the cuDNN files.</p>
 	
