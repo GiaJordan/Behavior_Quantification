@@ -13,7 +13,7 @@ vidStop=nan;
 frNo=1;
 i=1;
 trailpoints=367*2;
-suppInfo=false;
+suppInfo=true;
 
 
 
@@ -69,9 +69,6 @@ if suppInfo
     OUT.n_neurons = length(SP);
     
     [NT,~,NT_t_uS] = Bin_and_smooth_ts_array(TS_uS,binSize);
-    NT=gpuArray(NT);
-    NT_t_uS=gpuArray(NT_t_uS);
-    flat=[NT_t_uS',sum(NT,2)];
 end
 
 
@@ -94,7 +91,7 @@ for i=vidStart:vidStop
     
     
     imagesc(flipud(frame));
-    truesize
+%     truesize
     
     axis xy
     hold on
@@ -124,6 +121,7 @@ for i=vidStart:vidStop
             ylabel("Speed (m/s)")
             xlabel("Time (s)")
             ylim([0 2])
+            xlim([PAW.Time_uSec(i-trailpoints)/(1e6) PAW.Time_uSec(i+trailpoints)/(1e6)])
             legend({'Right Paw' 'Left Paw'})
             
             %paw accel
@@ -137,23 +135,35 @@ for i=vidStart:vidStop
             xlabel("Time (s)")
             legend({'Right Paw' 'Left Paw'})
             ylim([0 0.5])
+            xlim([PAW.Time_uSec(i-trailpoints)/(1e6) PAW.Time_uSec(i+trailpoints)/(1e6)])
             
             
             %neurons
-            [nInterest,~]=Restrict(flat,PAW.Time_uSec(i-trailpoints),PAW.Time_uSec(i));
+            %[nInterest,~]=Restrict(flat,PAW.Time_uSec(i-trailpoints),PAW.Time_uSec(i));
+            [nInterest,~]=Restrict([NT_t_uS',NT],PAW.Time_uSec(i-trailpoints),PAW.Time_uSec(i));
             nexttile
-            plot(nInterest(:,1)/(1e6),nInterest(:,2))
-            title("Neurons Firing")
+            %plot(nInterest(:,1)/(1e6),nInterest(:,2))
+            
+            for neuron=2:size(nInterest,2)
+                %scatter(nInterest(nInterest(:,neuron)>0,1),nInterest(nInterest(:,neuron)>0,neuron),20)
+                scatter(nInterest(nInterest(:,neuron)>0,1)/(1e6),neuron*ones(sum(nInterest(:,neuron)>0),1),30,'.k')
+                hold on
+            end
+            
+            hold off
+            set(gca,'YDir','reverse')
+            title("Ensemble Action Potentials")
             xlabel("Time (s)")
-            ylabel("Number of Spikes")
-            ylim([0 5])
+            ylabel("Neuron")
+            ylim([0 size(nInterest,2)-1])
+            
             
             
         end
     end
     
     
-    
+    set(gcf,'Position',[299          32        1411         964])
     img=getframe(gcf);
     writeVideo(writer,img);
     
