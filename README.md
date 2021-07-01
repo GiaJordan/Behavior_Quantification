@@ -1,5 +1,17 @@
 <h1>Behavior Quantification System</h1>
 
+<h2>An Open Source System and Software Toolbox for:</h2>
+<ul>
+	<li>String pulling task shaping and administration</li>
+	<li>Synchronization of string pulling behavior data to neural activity</li> 
+	<li>Automation of behavior segmentaion</li> 
+	<li>Kinematic and neural activity analysis</li>
+</ul>
+
+
+https://user-images.githubusercontent.com/61707471/124181339-38d7fe00-da6a-11eb-851b-efbcaa78ad7f.mp4
+
+
 This repository has depnedencies from other repositories, so when cloning for the first time please use 
 
 	$ git clone --recursive
@@ -54,7 +66,7 @@ must be unzipped (7Zip should be used for these) before use due to GitHub size l
 
 
 <h2>Documentation, Diagrams, and Drawings</h2>
-	<p>The circuit diagram for the behavior quantfication system is given in the 'Ardiuno Mega Circuit Diagrams' .PDF file. Wiring suggestions for use with a DB25 pin connecter are also included in case extension is necessary.</p>
+	<p>The circuit diagram for the behavior quantfication system is given in the 'Ardiuno Mega Circuit Diagrams' .PDF file. Wiring suggestions for use with a DB25 pin connecter are also included in case physical extension of the system is necessary.</p>
 
 
 
