@@ -11,7 +11,6 @@
 
 
 
-https://user-images.githubusercontent.com/61707471/124189658-e69cda00-da75-11eb-8a83-dee7352ae951.mp4
 
 
 
