@@ -8,10 +8,7 @@
 	<li>Kinematic and neural activity analysis</li>
 </ul>
 
-
-
-
-
+https://user-images.githubusercontent.com/61707471/124198057-c1639800-da84-11eb-99bd-ec2cde397f62.mp4
 
 
 
