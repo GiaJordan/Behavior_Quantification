@@ -6,10 +6,10 @@ gpu = 0; %%% Is GPU installed? 1 = yes 0 = no
 
 
 
-PXthresh = 70;%25;
+PXthresh = 120;%70%25;
 LHthresh = 0.50;%.9500;
-win_size= 10;
-cutoffFreq=15;%Hz
+win_size= 40;%10
+cutoffFreq=40;%15%Hz
 
 minGoodVals=ceil(367/2);
 lowPassPad=20;

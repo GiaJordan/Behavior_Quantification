@@ -13,9 +13,9 @@ vidStop=nan;
 frNo=1;
 i=1;
 trailpoints=367*2;
-suppInfo=true;
+suppInfo=false;
 
-
+LW=3;
 
 vid_path=fullfile('G:\DATA\LID_Ketamine_SingleUnit_R56',num2str(P.rat),num2str(P.session),[num2str(P.session) '.mp4'])
 out_path=fullfile('G:\DATA\LID_Ketamine_SingleUnit_R56',num2str(P.rat),num2str(P.session),'Labeled_Videos');
@@ -38,7 +38,11 @@ coords=load('Filtered_Time_Stamped_Coordinates_Corrected_Ori.mat');
 coords=coords.T3;
 S=size(coords);
 
-if length(varargin)>0
+if length(varargin)==2
+    vidStart=cell2mat(varargin(1));
+    vidStop =cell2mat(varargin(2));
+    writer=VideoWriter(fullfile(out_path,[num2str(P.session) '_Labeled']), 'MPEG-4')
+elseif length(varargin)==3
     vidStart=cell2mat(varargin(1));
     vidStop =cell2mat(varargin(2));
     writer=VideoWriter(fullfile(out_path,[num2str(P.session) '_' char(varargin(3))]), 'MPEG-4')
@@ -48,9 +52,10 @@ else
     writer=VideoWriter(fullfile(out_path,[num2str(P.session) '_Labeled']), 'MPEG-4')
 end
 writer.FrameRate=15;
+writer.Quality=100;
 open(writer)
 
-    
+
 [PAW,~]=LK_process_paw_data(coords,good_string_pull_intervals_uSec);
 PXmap   =  [386,386,387];
 pxPerCm=median(PXmap)/10;
@@ -69,6 +74,9 @@ if suppInfo
     OUT.n_neurons = length(SP);
     
     [NT,~,NT_t_uS] = Bin_and_smooth_ts_array(TS_uS,binSize);
+%         NT=gpuArray(NT);
+%         NT_t_uS=gpuArray(NT_t_uS);
+    % %     flat=[NT_t_uS',sum(NT,2)];
 end
 
 
@@ -91,23 +99,24 @@ for i=vidStart:vidStop
     
     
     imagesc(flipud(frame));
-%     truesize
+    %     truesize
     
     axis xy
     hold on
     
     if ~isnan(coords.Nose_x(i))
-        scatter(coords.Nose_x(i),coords.Nose_y(i),100,'y')
+        scatter(coords.Nose_x(i),coords.Nose_y(i),150,'y','LineWidth',LW)
         hold on
     end
     if ~isnan(coords.Left_x(i))
-        scatter(coords.Left_x(i),coords.Left_y(i),100,'b')
+        scatter(coords.Left_x(i),coords.Left_y(i),150,'b','LineWidth',LW)
         hold on
     end
     if ~isnan(coords.Right_x(i))
-        scatter(coords.Right_x(i),coords.Right_y(i),100,'r')
+        scatter(coords.Right_x(i),coords.Right_y(i),150,'r','LineWidth',LW)
     end
     hold off
+    title("Paw and Nose Tracking")
     
     if (i> trailpoints)
         if suppInfo
@@ -121,7 +130,7 @@ for i=vidStart:vidStop
             ylabel("Speed (m/s)")
             xlabel("Time (s)")
             ylim([0 2])
-            xlim([PAW.Time_uSec(i-trailpoints)/(1e6) PAW.Time_uSec(i+trailpoints)/(1e6)])
+            xlim([PAW.Time_uSec(i-trailpoints)/(1e6) PAW.Time_uSec(i+floor(trailpoints/9))/(1e6)])
             legend({'Right Paw' 'Left Paw'})
             
             %paw accel
@@ -134,8 +143,8 @@ for i=vidStart:vidStop
             ylabel("Acceleration (m/s^2)")
             xlabel("Time (s)")
             legend({'Right Paw' 'Left Paw'})
-            ylim([0 0.5])
-            xlim([PAW.Time_uSec(i-trailpoints)/(1e6) PAW.Time_uSec(i+trailpoints)/(1e6)])
+            ylim([-0.15 0.15])
+            xlim([PAW.Time_uSec(i-trailpoints)/(1e6) PAW.Time_uSec(i+floor(trailpoints/9))/(1e6)])
             
             
             %neurons

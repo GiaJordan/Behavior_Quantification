@@ -8,10 +8,10 @@ set(0, 'defaultAxesTickLabelInterpreter', 'none');
 set(0, 'defaultAxesFontName', 'Arial');
 format short g
 
-addpath(genpath(pwd))
+%addpath(genpath(pwd))
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-dependencies = fullfile(pwd,'..','SupportingFunctions');
+dependencies = fullfile(pwd,'.','SupportingFunctions');
 
 if exist(dependencies,'dir')
     addpath(genpath(dependencies))
