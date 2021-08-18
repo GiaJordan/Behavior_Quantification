@@ -10,8 +10,8 @@ med = NaN(len,1);
 
 
 for i=1:1:2
-    %med = movmedian(digit(1:len,i),[win_size 0],'omitNaN');
-    med = movmedian(digit(1:len,i),win_size,'omitNaN');
+    med = movmedian(digit(1:len,i),[win_size 0],'omitNaN');
+    %med = movmedian(digit(1:len,i),win_size,'omitNaN');
     
     ix=(digit(:,i)-med)>thresh;
     
