@@ -25,7 +25,7 @@ to download the submodules necessary.
 
 <h2>Software</h2>
 	
-<h3>Task Administartion and Data Collection</h3>
+<h3>Task Administration and Data Collection</h3>
 	<p>Two C++ scripts for use with arduino microcontrollers are included to administer the string pulling task. Both will automatically measure the distance pulled and will dispense a food reward at the specified distance(s). The scripts differ in study conditions of interest. </p>
 	<p><code>MEGA-Varied_Distance</code> allows for an array of target distances to be set before the beginning of a task. This will be useful during the inital shaping and training of a naive animal. Shorter distances should be set initally that gradually increase to you desired pull distance. Each distance is rewarded 100% of the time.</p>
 	<p><code>MEGA-Varied_Reward</code> allows for two target distances to be set. Upon reaching the shorter distance, the rat will be rewarded a specified percentage of the time. The pseudorandom percentage can be set by inserting '1's and '0's in the percentRewarded array for how many trials out of 10 should be rewarded and unrewarded. It is currently configured to reward 80% of the pulls to the first distance. If the first distance is unrewarded, when the rodent continues pulling to the 2nd distance there is a 100% guarantee of a reward.</p>
