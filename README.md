@@ -1,14 +1,17 @@
 <h1>Behavior Quantification System</h1>
 
 <h2>An Open Source System and Software Toolbox for:</h2>
-<ul>
-	<li>String pulling task shaping and administration</li>
-	<li>Synchronization of string pulling behavior data to neural activity</li> 
-	<li>Automation of behavior segmentaion</li> 
-	<li>Kinematic and neural activity analysis</li>
-</ul>
 
-https://user-images.githubusercontent.com/61707471/124198057-c1639800-da84-11eb-99bd-ec2cde397f62.mp4
+
+<dl>
+	<dt>String pulling task shaping and administration</dt>
+	<dt>Synchronization of string pulling behavior data to neural activity</dt> 
+	<dd>	<video src="https://user-images.githubusercontent.com/61707471/124198057-c1639800-da84-11eb-99bd-ec2cde397f62.mp4" alt="Video1">	</dd>
+	<dt>Automation of behavior segmentaion</dt> 
+	<dd>	<img src="https://user-images.githubusercontent.com/61707471/142264500-bd4f06dc-6423-4d2d-a3b8-a1cd2fff0ff8.jpg" alt="Img1">	</dd>
+	<dt>Kinematic and neural activity analysis</dt>
+	<dd>	<img src="https://user-images.githubusercontent.com/61707471/142265844-66a93cd0-faa7-4cff-8c67-3a171c392838.jpg" alt="Img2">	</dd>
+</dl>
 
 
 
